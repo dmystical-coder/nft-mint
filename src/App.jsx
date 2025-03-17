@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import { useAppContext } from "./contexts/appContext";
 import NFTCard from "./components/Main/NFTCard";
 import useMintToken from "./hooks/useMintToken";
+import Footer from "./components/Footer";
 const App = () => {
   const { nextTokenId, tokenMetaData, mintPrice } = useAppContext();
 
@@ -32,7 +33,7 @@ const App = () => {
           </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {tokenMetaDataArray.map((token, i) => (
             <NFTCard
               key={token.name.split(" ").join("")}
@@ -45,6 +46,7 @@ const App = () => {
           ))}
         </div>
       </main>
+      <Footer/>
     </>
   );
 };
